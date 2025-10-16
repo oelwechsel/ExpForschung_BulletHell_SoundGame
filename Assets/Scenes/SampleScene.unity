@@ -545,7 +545,8 @@ MonoBehaviour:
   moveSpeed: 4
   projectilePrefab: {fileID: 6080723290900785180, guid: 4e34cab1d0907db4a983be38da089792, type: 3}
   shootOrigin: {fileID: 728774319}
-  projectileSpeed: 8
+  projectileSpeed: 12
+  fireRate: 0.1
 --- !u!50 &1243910175
 Rigidbody2D:
   serializedVersion: 4
