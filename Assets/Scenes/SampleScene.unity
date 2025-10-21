@@ -151,21 +151,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7312417621aa557418e42b3aeccdfaa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patterns:
-  - patternType: 1
-    enemyPrefab: {fileID: 7577861480676072008, guid: 176d166c3d8d0b64eaf2fe9ba8e5283b, type: 3}
-    count: 6
-    radius: 10
-    spacing: 4
+  wavePatterns:
+  - patternFile: {fileID: 4900000, guid: 0e30b9a27810f7549958e4ca34b6a9d8, type: 3}
+    startPosition: {x: 0, y: 0}
+    spacing: 1.5
     rotationOffset: 0
-    triggerRemainingEnemies: 1
-  - patternType: 0
-    enemyPrefab: {fileID: 2010498967951446650, guid: b031701e1363d804bbc6d1c9b6ccf086, type: 3}
-    count: 6
-    radius: 10
-    spacing: 4
+    triggerRemainingEnemies: 2
+  - patternFile: {fileID: 4900000, guid: 0e30b9a27810f7549958e4ca34b6a9d8, type: 3}
+    startPosition: {x: -9, y: 4}
+    spacing: 2
     rotationOffset: 0
-    triggerRemainingEnemies: 1
+    triggerRemainingEnemies: 2
+  enemyA: {fileID: 7577861480676072008, guid: 176d166c3d8d0b64eaf2fe9ba8e5283b, type: 3}
+  enemyB: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+  enemyC: {fileID: 2010498967951446650, guid: b031701e1363d804bbc6d1c9b6ccf086, type: 3}
 --- !u!4 &374886580
 Transform:
   m_ObjectHideFlags: 0

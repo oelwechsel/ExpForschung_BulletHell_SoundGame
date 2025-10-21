@@ -1,23 +1,11 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-
-public enum EnemyPatternType
-{
-    Line,
-    Circle,
-    XShape
-}
 
 [System.Serializable]
-public class EnemySpawnPattern
+public class WavePattern
 {
-    public EnemyPatternType patternType;
-    public GameObject enemyPrefab;
-    public int count = 5;        // Anzahl Gegner
-    public float radius = 3f;    // für Kreis/X
-    public float spacing = 1.5f; // für Linie/X
-    public float rotationOffset = 0f; // Rotation
-    public int triggerRemainingEnemies = 0; // Anzahl Gegner übrig, um nächste Welle zu spawnen
+    public TextAsset patternFile;         // ASCII-Pattern
+    public Vector2 startPosition = Vector2.zero;
+    public float spacing = 1.5f;
+    public float rotationOffset = 0f;
+    public int triggerRemainingEnemies = 0; // wann nächste Welle spawnt
 }
-

@@ -3,10 +3,27 @@ using System.Collections.Generic;
 
 public class SpawnManager : MonoBehaviour
 {
-    public List<EnemySpawnPattern> patterns = new List<EnemySpawnPattern>();
+    [Header("Wave Patterns")]
+    public List<WavePattern> wavePatterns = new List<WavePattern>();
+
+    [Header("Enemy Prefabs")]
+    public GameObject enemyA;
+    public GameObject enemyB;
+    public GameObject enemyC;
 
     private int currentPatternIndex = 0;
     private List<GameObject> activeEnemies = new List<GameObject>();
+    private Dictionary<char, GameObject> symbolMap;
+
+    private void Awake()
+    {
+        symbolMap = new Dictionary<char, GameObject>()
+        {
+            {'A', enemyA },
+            {'B', enemyB },
+            {'C', enemyC }
+        };
+    }
 
     private void Start()
     {
@@ -15,13 +32,9 @@ public class SpawnManager : MonoBehaviour
 
     private void Update()
     {
-        // Prüfe, ob nächste Welle spawnen soll
-        if (currentPatternIndex < patterns.Count)
+        if (currentPatternIndex < wavePatterns.Count)
         {
-            EnemySpawnPattern pattern = patterns[currentPatternIndex];
-            int aliveCount = CountAliveEnemies();
-
-            if (aliveCount <= pattern.triggerRemainingEnemies)
+            if (CountAliveEnemies() <= wavePatterns[currentPatternIndex].triggerRemainingEnemies)
             {
                 SpawnNextPattern();
             }
@@ -30,64 +43,42 @@ public class SpawnManager : MonoBehaviour
 
     private void SpawnNextPattern()
     {
-        if (currentPatternIndex >= patterns.Count) return;
+        if (currentPatternIndex >= wavePatterns.Count) return;
 
-        EnemySpawnPattern pattern = patterns[currentPatternIndex];
-        List<GameObject> newEnemies = SpawnPattern(pattern);
+        WavePattern wave = wavePatterns[currentPatternIndex];
+        List<GameObject> newEnemies = SpawnPatternFromText(wave);
 
-        // Aktive Gegner speichern
         activeEnemies.AddRange(newEnemies);
-
         currentPatternIndex++;
     }
 
     private int CountAliveEnemies()
     {
-        activeEnemies.RemoveAll(e => e == null); // entferne zerstörte Gegner
+        activeEnemies.RemoveAll(e => e == null);
         return activeEnemies.Count;
     }
 
-    private List<GameObject> SpawnPattern(EnemySpawnPattern pattern)
+    private List<GameObject> SpawnPatternFromText(WavePattern wave)
     {
         List<GameObject> spawnedEnemies = new List<GameObject>();
-        Vector2 center = transform.position;
+        if (wave.patternFile == null) return spawnedEnemies;
 
-        switch (pattern.patternType)
+        string[] lines = wave.patternFile.text.Split('\n');
+
+        for (int y = 0; y < lines.Length; y++)
         {
-            case EnemyPatternType.Line:
-                float totalWidth = (pattern.count - 1) * pattern.spacing;
-                for (int i = 0; i < pattern.count; i++)
+            string line = lines[y].Trim();
+            for (int x = 0; x < line.Length; x++)
+            {
+                char c = line[x];
+                if (symbolMap.ContainsKey(c) && symbolMap[c] != null)
                 {
-                    float x = i * pattern.spacing - totalWidth / 2f;
-                    Vector2 pos = center + RotatePoint(new Vector2(x, 0), pattern.rotationOffset);
-                    spawnedEnemies.Add(Instantiate(pattern.enemyPrefab, pos, Quaternion.identity));
+                    Vector2 pos = wave.startPosition + new Vector2(x * wave.spacing, -y * wave.spacing);
+                    pos = RotatePoint(pos - wave.startPosition, wave.rotationOffset) + wave.startPosition;
+
+                    spawnedEnemies.Add(Instantiate(symbolMap[c], pos, Quaternion.identity));
                 }
-                break;
-
-            case EnemyPatternType.Circle:
-                float angleStep = 360f / pattern.count;
-                for (int i = 0; i < pattern.count; i++)
-                {
-                    float angle = i * angleStep + pattern.rotationOffset;
-                    Vector2 pos = center + new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)) * pattern.radius;
-                    spawnedEnemies.Add(Instantiate(pattern.enemyPrefab, pos, Quaternion.identity));
-                }
-                break;
-
-            case EnemyPatternType.XShape:
-                int half = pattern.count / 2;
-                for (int i = -half; i <= half; i++)
-                {
-                    float x = i * pattern.spacing;
-                    float y = i * pattern.spacing;
-
-                    Vector2 pos1 = center + RotatePoint(new Vector2(x, y), pattern.rotationOffset);
-                    Vector2 pos2 = center + RotatePoint(new Vector2(x, -y), pattern.rotationOffset);
-
-                    spawnedEnemies.Add(Instantiate(pattern.enemyPrefab, pos1, Quaternion.identity));
-                    spawnedEnemies.Add(Instantiate(pattern.enemyPrefab, pos2, Quaternion.identity));
-                }
-                break;
+            }
         }
 
         return spawnedEnemies;
