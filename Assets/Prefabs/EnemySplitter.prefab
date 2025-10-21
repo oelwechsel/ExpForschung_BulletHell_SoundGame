@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
+  currentHealth: 0
+  deathEffectPrefab: {fileID: 7988234242200745337, guid: 494a0d52737a18a419470e2b7f3498e8, type: 3}
 --- !u!114 &3667602957425811256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,9 +116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  smallEnemyPrefab: {fileID: 7386411736006624885, guid: 2b637e80dfe872b4299a48c5c5644ccf, type: 3}
-  splitCount: 2
-  orbitSpeed: 100
+  orbitCenterPrefab: {fileID: 5820297470491982401, guid: 0565b1d39245529498d3fdf482307f07, type: 3}
+  orbitingEnemyPrefab: {fileID: 7577861480676072008, guid: 6cae01807c5abe44ca70f8c311605e8d, type: 3}
 --- !u!50 &2154075666009434690
 Rigidbody2D:
   serializedVersion: 4
@@ -173,7 +174,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

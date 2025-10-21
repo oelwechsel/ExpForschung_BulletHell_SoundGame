@@ -3,9 +3,8 @@ using UnityEngine;
 public class EnemySplitter : EnemyBase
 {
     [Header("Split Settings")]
-    public GameObject smallEnemyPrefab;
-    public int splitCount = 2;
-    public float orbitSpeed = 100f;
+    public GameObject orbitCenterPrefab;
+    public GameObject orbitingEnemyPrefab;
 
     private void Start()
     {
@@ -17,20 +16,15 @@ public class EnemySplitter : EnemyBase
         base.FixedUpdate();
 
         // Gegner dreht sich leicht während der Bewegung
-        transform.Rotate(Vector3.forward, orbitSpeed * Time.fixedDeltaTime);
+        transform.Rotate(Vector3.forward, 100f * Time.fixedDeltaTime);
     }
 
     protected override void OnDeath()
     {
-        if (smallEnemyPrefab == null) return;
+        if (orbitCenterPrefab == null || orbitingEnemyPrefab == null)
+            return;
 
-        for (int i = 0; i < splitCount; i++)
-        {
-            Vector2 spawnPos = (Vector2)transform.position + Random.insideUnitCircle * 0.5f;
-            GameObject small = Instantiate(smallEnemyPrefab, spawnPos, Quaternion.identity);
-            EnemyBase e = small.GetComponent<EnemyBase>();
-            if (e != null)
-                e.moveSpeed = 1.5f; // kleinere, langsamere Version
-        }
+        // Spawn des Orbit-Systems
+        Instantiate(orbitCenterPrefab, transform.position, Quaternion.identity);
     }
 }

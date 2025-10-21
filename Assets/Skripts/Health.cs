@@ -3,9 +3,12 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public int maxHealth = 3;
-    private int currentHealth;
+    public int currentHealth;
 
     public System.Action OnDeath;
+
+    [Header("Death Effect")]
+    public GameObject deathEffectPrefab;
 
     private void Awake()
     {
@@ -16,7 +19,6 @@ public class Health : MonoBehaviour
     {
         currentHealth -= amount;
 
-        // Spezielles Verhalten für Shrink-Gegner
         EnemyShrink shrink = GetComponent<EnemyShrink>();
         if (shrink != null)
             shrink.TakeHit();
@@ -27,9 +29,14 @@ public class Health : MonoBehaviour
         }
     }
 
-
     private void Die()
     {
+        if (deathEffectPrefab != null)
+        {
+            GameObject effect = Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
+            Destroy(effect, 2f);
+        }
+
         OnDeath?.Invoke();
         Destroy(gameObject);
     }

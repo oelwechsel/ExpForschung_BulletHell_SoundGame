@@ -45,4 +45,22 @@ public class EnemyBase : MonoBehaviour
     {
         // Kann von abgeleiteten Klassen überschrieben werden
     }
+
+    /*
+
+    protected virtual void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            // Zugriff auf das PlayerLives-Skript
+            PlayerLives playerLives = other.GetComponent<PlayerLives>();
+            if (playerLives != null)
+            {
+                playerLives.TakeHit(); // neue Methode im PlayerLives-Script
+            }
+        }
+    }
+    */
+
+
 }
