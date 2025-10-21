@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2756175118067803844}
   - component: {fileID: 941731707754822440}
   - component: {fileID: 8331961101578837836}
+  - component: {fileID: 2798000822019537176}
   m_Layer: 7
   m_Name: EnemyShrink
   m_TagString: Enemy
@@ -179,3 +180,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &2798000822019537176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010498967951446650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d93cff908195b49baeb4a9f4364c24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnDuration: 1
+  spawnEffectPrefab: {fileID: 0}

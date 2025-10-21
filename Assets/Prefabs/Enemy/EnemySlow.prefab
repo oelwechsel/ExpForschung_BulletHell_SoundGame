@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5112924753039519176}
   - component: {fileID: 2863280329398443260}
   - component: {fileID: 7976912645462055290}
+  - component: {fileID: 5224597197442371198}
   m_Layer: 7
   m_Name: EnemySlow
   m_TagString: Enemy
@@ -178,3 +179,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &5224597197442371198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7577861480676072008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d93cff908195b49baeb4a9f4364c24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnDuration: 1
+  spawnEffectPrefab: {fileID: 0}

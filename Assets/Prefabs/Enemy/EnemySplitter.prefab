@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3667602957425811256}
   - component: {fileID: 2154075666009434690}
   - component: {fileID: 6214127558280028599}
+  - component: {fileID: -3927033415240648075}
   m_Layer: 7
   m_Name: EnemySplitter
   m_TagString: Enemy
@@ -180,3 +181,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-3927033415240648075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7414165381251910137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d93cff908195b49baeb4a9f4364c24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnDuration: 1
+  spawnEffectPrefab: {fileID: 0}
