@@ -15,11 +15,18 @@ public class Health : MonoBehaviour
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
+
+        // Spezielles Verhalten für Shrink-Gegner
+        EnemyShrink shrink = GetComponent<EnemyShrink>();
+        if (shrink != null)
+            shrink.TakeHit();
+
         if (currentHealth <= 0)
         {
             Die();
         }
     }
+
 
     private void Die()
     {
