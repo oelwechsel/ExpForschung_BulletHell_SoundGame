@@ -13,9 +13,13 @@ public class PlayerLives : MonoBehaviour
     public float respawnDelay = 0.5f;
 
     [Header("Invulnerability Settings")]
-    public float invulnDuration = 1.0f; // optional: nach Respawn unverwundbar
+    public float invulnDuration = 1.0f;
     private bool isRespawning = false;
     private bool isInvulnerable = false;
+
+    [Header("Visual Effects")]
+    public GameObject hitEffectPrefab;
+    public GameObject deathEffectPrefab;
 
     private SpriteRenderer sr;
     private Collider2D col;
@@ -35,8 +39,21 @@ public class PlayerLives : MonoBehaviour
 
         if (other.CompareTag("Enemy"))
         {
-            LoseLife();
+            TakeHit();
         }
+    }
+
+    public void TakeHit()
+    {
+        if (isInvulnerable || isRespawning) return;
+
+        if (hitEffectPrefab != null)
+        {
+            GameObject hitFX = Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
+            Destroy(hitFX, 2f);
+        }
+
+        LoseLife();
     }
 
     private void LoseLife()
@@ -56,20 +73,21 @@ public class PlayerLives : MonoBehaviour
     {
         isRespawning = true;
 
-        // Deaktiviere kurz Sichtbarkeit und Kollision
+        // Deaktiviere Sichtbarkeit & Kollision
         sr.enabled = false;
         col.enabled = false;
         rb.velocity = Vector2.zero;
 
         yield return new WaitForSeconds(respawnDelay);
 
+        // Respawn in Mitte
         transform.position = respawnPosition;
 
-        // Wieder sichtbar + Kollision aktivieren
+        // Wieder sichtbar & aktiv
         sr.enabled = true;
         col.enabled = true;
 
-        // Kurz unverwundbar (z. B. Blinken)
+        // Kurze Unverwundbarkeit mit Blinken
         StartCoroutine(InvulnerabilityBlink());
 
         isRespawning = false;
@@ -94,6 +112,14 @@ public class PlayerLives : MonoBehaviour
     private void GameOver()
     {
         Debug.Log("GAME OVER!");
+
+        if (deathEffectPrefab != null)
+        {
+            GameObject deathFX = Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
+            Destroy(deathFX, 3f);
+        }
+
+        // Szene neu laden oder Spielobjekt zerstören
         // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Destroy(gameObject);
     }
