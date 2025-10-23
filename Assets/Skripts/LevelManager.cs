@@ -47,13 +47,14 @@ public class LevelManager : MonoBehaviour
     }
     private void Start()
     {
-        // Alle Tracks verfügbar
+        // Alle Tracks verfï¿½gbar
         remainingTracks = new List<int> { 0, 1, 2 };
 
         startButton.onClick.AddListener(StartLevel);
         nextLevelButton.onClick.AddListener(StartLevel);
 
         ShowStartScreen();
+
     }
 
     private void ShowStartScreen()
@@ -76,7 +77,7 @@ public class LevelManager : MonoBehaviour
             return;
         }
 
-        // Track auswählen und entfernen (nicht wiederholen)
+        // Track auswï¿½hlen und entfernen (nicht wiederholen)
         int trackIndex = remainingTracks[Random.Range(0, remainingTracks.Count)];
         remainingTracks.Remove(trackIndex);
 
@@ -114,13 +115,17 @@ public class LevelManager : MonoBehaviour
             yield return null;
         }
 
+
+        DataCollector.Instance.Set("dnadna", currentLevel);
+        DataCollector.Instance.SaveLevelData(currentLevel);
+
         // Musik stoppen
         musicSource.Stop();
 
-        // Spieler wieder volle Leben für nächsten Level
+        // Spieler wieder volle Leben fï¿½r nï¿½chsten Level
         PlayerLives.Instance.ResetLives();
 
-        // Prüfen, ob noch Tracks übrig sind
+        // Prï¿½fen, ob noch Tracks ï¿½brig sind
         if (remainingTracks.Count > 0)
         {
             ShowLevelCompleteScreen();

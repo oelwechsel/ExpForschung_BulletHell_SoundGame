@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleShooting()
     {
-        // Nur schießen, wenn Prefab gesetzt ist
+        // Nur schieï¿½en, wenn Prefab gesetzt ist
         if (projectilePrefab == null || shootOrigin == null) return;
 
         if (!LevelManager.Instance.isLevelActive || PlayerLives.Instance.IsRespawning) return;
