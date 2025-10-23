@@ -44,6 +44,10 @@ public class PlayerLives : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         col = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
+
+        DataCollector.Instance.Set("Player Lost his first life at time", "--------");
+        DataCollector.Instance.Set("Player Lost his second life at time", "--------");
+        DataCollector.Instance.Set("Player Lost his last life at time", "--------");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -74,6 +78,16 @@ public class PlayerLives : MonoBehaviour
         if (isRespawning) return;
 
         currentLives--;
+
+
+
+        if (currentLives == 2)
+            DataCollector.Instance.Set("Player Lost his first life at time", (int)LevelManager.Instance.currentTimer);
+        else if (currentLives == 1)
+            DataCollector.Instance.Set("Player Lost his second life at time", (int)LevelManager.Instance.currentTimer);
+        else if (currentLives == 0)
+            DataCollector.Instance.Set("Player Lost his last life at time", (int)LevelManager.Instance.currentTimer);
+            
         Debug.Log($"Player hit! Lives left: {currentLives}");
 
         if (currentLives > 0)
@@ -130,7 +144,9 @@ public class PlayerLives : MonoBehaviour
 
     private void GameOver()
     {
-        Debug.Log("GAME OVER!");
+        Debug.Log("Level GAME OVER!");
+
+        currentLives = 0;
 
         if (deathEffectPrefab != null)
         {
