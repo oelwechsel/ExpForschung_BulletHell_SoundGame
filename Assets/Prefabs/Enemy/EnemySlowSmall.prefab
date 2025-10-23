@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 3
   currentHealth: 0
-  deathEffectPrefab: {fileID: 7988234242200745337, guid: 494a0d52737a18a419470e2b7f3498e8, type: 3}
+  deathEffectPrefab: {fileID: 7988234242200745337, guid: a06f02fc52d5e5d4aae366c4542438a1, type: 3}
 --- !u!114 &5112924753039519176
 MonoBehaviour:
   m_ObjectHideFlags: 0
