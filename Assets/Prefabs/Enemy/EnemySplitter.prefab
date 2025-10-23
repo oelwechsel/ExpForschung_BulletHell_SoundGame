@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8176925624746698140}
   - component: {fileID: 3667602957425811256}
   - component: {fileID: 2154075666009434690}
-  - component: {fileID: 6214127558280028599}
   - component: {fileID: -3927033415240648075}
+  - component: {fileID: 6643356013261163056}
   m_Layer: 7
   m_Name: EnemySplitter
   m_TagString: Enemy
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eccba98cf56dd44abf850cd0cc2233a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 1
   currentHealth: 0
   deathEffectPrefab: {fileID: 7988234242200745337, guid: 8ee90dfdb49034d4380821ca07587999, type: 3}
 --- !u!114 &3667602957425811256
@@ -146,8 +146,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &6214127558280028599
-CircleCollider2D:
+--- !u!114 &-3927033415240648075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7414165381251910137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d93cff908195b49baeb4a9f4364c24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnDuration: 1
+  spawnEffectPrefab: {fileID: 0}
+--- !u!61 &6643356013261163056
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -179,19 +193,15 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &-3927033415240648075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7414165381251910137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46d93cff908195b49baeb4a9f4364c24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnDuration: 1
-  spawnEffectPrefab: {fileID: 0}
+  m_Size: {x: 0.5, y: 0.5}
+  m_EdgeRadius: 0
