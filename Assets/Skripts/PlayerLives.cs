@@ -18,6 +18,8 @@ public class PlayerLives : MonoBehaviour
     private bool isRespawning = false;
     private bool isInvulnerable = false;
 
+    public bool IsRespawning => isRespawning;
+
     [Header("Visual Effects")]
     public GameObject hitEffectPrefab;
     public GameObject deathEffectPrefab;

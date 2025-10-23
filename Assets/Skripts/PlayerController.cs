@@ -67,6 +67,8 @@ public class PlayerController : MonoBehaviour
         // Nur schießen, wenn Prefab gesetzt ist
         if (projectilePrefab == null || shootOrigin == null) return;
 
+        if (!LevelManager.Instance.isLevelActive || PlayerLives.Instance.IsRespawning) return;
+
         if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
         {
             Shoot();
