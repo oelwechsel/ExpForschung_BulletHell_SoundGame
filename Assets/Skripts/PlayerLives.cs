@@ -7,6 +7,7 @@ public class PlayerLives : MonoBehaviour
     [Header("Lives Settings")]
     public int maxLives = 3;
     private int currentLives;
+    public int CurrentLives => currentLives;
 
     [Header("Respawn Settings")]
     public Vector2 respawnPosition = Vector2.zero;
