@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (!LevelManager.Instance.isLevelActive) return;
+
         HandleMovementInput();
         HandleAiming();
         HandleShooting();
@@ -32,8 +34,11 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!LevelManager.Instance.isLevelActive) return;
+
         rb.velocity = moveInput * moveSpeed;
     }
+
 
     // INPUT
     private void HandleMovementInput()

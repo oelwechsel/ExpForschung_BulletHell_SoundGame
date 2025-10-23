@@ -26,8 +26,18 @@ public class PlayerLives : MonoBehaviour
     private Collider2D col;
     private Rigidbody2D rb;
 
+    public static PlayerLives Instance { get; private set; }
+
     private void Awake()
     {
+        // Singleton initialisieren
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+
         currentLives = maxLives;
         sr = GetComponent<SpriteRenderer>();
         col = GetComponent<Collider2D>();
@@ -46,7 +56,7 @@ public class PlayerLives : MonoBehaviour
 
     public void TakeHit()
     {
-        if (isInvulnerable || isRespawning) return;
+        if (!LevelManager.Instance.isLevelActive || isInvulnerable || isRespawning) return;
 
         if (hitEffectPrefab != null)
         {
@@ -72,6 +82,12 @@ public class PlayerLives : MonoBehaviour
 
     private System.Collections.IEnumerator RespawnPlayer()
     {
+        if (!LevelManager.Instance.isLevelActive)
+        {
+            isRespawning = false;
+            yield break;
+        }
+
         isRespawning = true;
 
         // Deaktiviere Sichtbarkeit & Kollision
@@ -119,9 +135,17 @@ public class PlayerLives : MonoBehaviour
             GameObject deathFX = Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
             Destroy(deathFX, 3f);
         }
-
-        // Szene neu laden oder Spielobjekt zerstören
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Destroy(gameObject);
     }
+
+    public void ResetLives()
+    {
+        currentLives = maxLives;
+
+        // Spieler sichtbar machen und Collider aktivieren
+        sr.enabled = true;
+        col.enabled = true;
+        rb.velocity = Vector2.zero;
+        transform.position = respawnPosition;
+    }
+
 }

@@ -18,6 +18,9 @@ public class EnemyOrbitCenter : MonoBehaviour
         // Zwei Gegner im Kreis spawnen
         enemyA = Instantiate(orbitingEnemyPrefab, transform.position + Vector3.right * orbitRadius, Quaternion.identity);
         enemyB = Instantiate(orbitingEnemyPrefab, transform.position - Vector3.right * orbitRadius, Quaternion.identity);
+
+        SpawnManager.Instance.activeEnemies.Add(enemyA);
+        SpawnManager.Instance.activeEnemies.Add(enemyB);
     }
 
     private void Update()

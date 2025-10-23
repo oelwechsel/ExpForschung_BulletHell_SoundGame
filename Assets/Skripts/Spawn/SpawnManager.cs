@@ -12,26 +12,33 @@ public class SpawnManager : MonoBehaviour
     public GameObject enemyC;
 
     private int currentPatternIndex = 0;
-    private List<GameObject> activeEnemies = new List<GameObject>();
+    public List<GameObject> activeEnemies = new List<GameObject>();
     private Dictionary<char, GameObject> symbolMap;
+
+    public static SpawnManager Instance { get; private set; }
 
     private void Awake()
     {
-        symbolMap = new Dictionary<char, GameObject>()
+        // Singleton initialisieren
+        if (Instance != null && Instance != this)
         {
-            {'A', enemyA },
-            {'B', enemyB },
-            {'C', enemyC }
-        };
-    }
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
 
-    private void Start()
+        symbolMap = new Dictionary<char, GameObject>()
     {
-        SpawnNextPattern();
+        {'A', enemyA },
+        {'B', enemyB },
+        {'C', enemyC }
+    };
     }
 
     private void Update()
     {
+        if (!LevelManager.Instance.isLevelActive) return;
+
         if (currentPatternIndex < wavePatterns.Count)
         {
             if (CountAliveEnemies() <= wavePatterns[currentPatternIndex].triggerRemainingEnemies)
@@ -91,4 +98,18 @@ public class SpawnManager : MonoBehaviour
         float sin = Mathf.Sin(rad);
         return new Vector2(point.x * cos - point.y * sin, point.x * sin + point.y * cos);
     }
+
+    public void StartCurrentPattern()
+    {
+        // Zerstöre alte Gegner
+        foreach (var enemy in activeEnemies)
+            if (enemy != null) Destroy(enemy);
+
+        activeEnemies.Clear();
+        currentPatternIndex = 0;
+
+        if (wavePatterns.Count > 0)
+            SpawnNextPattern();
+    }
+
 }
