@@ -1738,6 +1738,7 @@ MonoBehaviour:
   closeRangeRadius: 2
   enemyTag: Enemy
   closeRangeEnemyCounter: 0
+  minDistanceBetweenPoints: 0.2
 --- !u!50 &1243910175
 Rigidbody2D:
   serializedVersion: 4
@@ -1781,6 +1782,7 @@ MonoBehaviour:
   respawnPosition: {x: 0, y: 0}
   respawnDelay: 0.5
   invulnDuration: 1
+  isInvulnerable: 0
   hitEffectPrefab: {fileID: 7988234242200745337, guid: 494a0d52737a18a419470e2b7f3498e8, type: 3}
   deathEffectPrefab: {fileID: 7988234242200745337, guid: 494a0d52737a18a419470e2b7f3498e8, type: 3}
 --- !u!60 &1243910178

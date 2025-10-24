@@ -120,6 +120,9 @@ public class LevelManager : MonoBehaviour
                 DataCollector.Instance.Set("Time Survived", (int)timer);
                 DataCollector.Instance.Set("Enemy in Close Range Detected", PlayerController.Instance.closeRangeEnemyCounter);
                 PlayerController.Instance.closeRangeEnemyCounter = 0;
+                DataCollector.Instance.Set("Total Bullets Fired", PlayerController.Instance.bulletCounter);
+                PlayerController.Instance.bulletCounter = 0;
+                DataCollector.Instance.Set($"Distance traveled", PlayerController.Instance.GetTotalDistanceMoved());
             }
             else if (PlayerLives.Instance.CurrentLives == 3)
             {
@@ -127,7 +130,7 @@ public class LevelManager : MonoBehaviour
                 DataCollector.Instance.Set("Player Lost his second life at time", "--------");
                 DataCollector.Instance.Set("Player Lost his last life at time", "--------");
             }
-            
+
 
             // Level endet, wenn Zeit abgelaufen ist
             if (timer >= levelDuration)
@@ -138,21 +141,19 @@ public class LevelManager : MonoBehaviour
                 DataCollector.Instance.Set("Time Survived", (int)timer);
                 DataCollector.Instance.Set("Enemy in Close Range Detected", PlayerController.Instance.closeRangeEnemyCounter);
                 PlayerController.Instance.closeRangeEnemyCounter = 0;
+                DataCollector.Instance.Set("Total Bullets Fired", PlayerController.Instance.bulletCounter);
+                PlayerController.Instance.bulletCounter = 0;
+                DataCollector.Instance.Set($"Distance traveled", PlayerController.Instance.GetTotalDistanceMoved());
+
             }
-
-
+            
             yield return null;
         }
 
-        if (currentLevel == 1)
-            DataCollector.Instance.Set("bpm - music pace ( change later )", "slow");
-        else if (currentLevel == 2)
-            DataCollector.Instance.Set("bpm - music pace ( change later )", "medium");
-        else if (currentLevel == 3)
-            DataCollector.Instance.Set("bpm - music pace ( change later )", "fast");
-            
-
+        
         DataCollector.Instance.SaveLevelData(currentLevel);
+
+        
 
         // Musik stoppen
         musicSource.Stop();

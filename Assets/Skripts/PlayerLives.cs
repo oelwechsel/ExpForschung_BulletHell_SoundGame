@@ -106,6 +106,9 @@ public class PlayerLives : MonoBehaviour
 
         isRespawning = true;
 
+        // 👇 Distanztracking pausieren & sichern
+        PlayerController.Instance.PauseTrackingOnDeath();
+
         // Deaktiviere Sichtbarkeit & Kollision
         sr.enabled = false;
         col.enabled = false;
@@ -113,18 +116,20 @@ public class PlayerLives : MonoBehaviour
 
         yield return new WaitForSeconds(respawnDelay);
 
-        // Respawn in Mitte
+        // Respawn
         transform.position = respawnPosition;
+        PlayerController.Instance.lastPosition = transform.position;
 
         // Wieder sichtbar & aktiv
         sr.enabled = true;
         col.enabled = true;
 
-        // Kurze Unverwundbarkeit mit Blinken
+        // Kurze Unverwundbarkeit
         StartCoroutine(InvulnerabilityBlink());
 
         isRespawning = false;
     }
+
 
     private System.Collections.IEnumerator InvulnerabilityBlink()
     {
@@ -159,11 +164,18 @@ public class PlayerLives : MonoBehaviour
     {
         currentLives = maxLives;
 
+
+        Debug.Log("Player lives reset------------------------------------------------.");
         // Spieler sichtbar machen und Collider aktivieren
         sr.enabled = true;
         col.enabled = true;
         rb.velocity = Vector2.zero;
         transform.position = respawnPosition;
+        PlayerController.Instance.lastPosition = transform.position;
+        PlayerController.Instance.totalDistanceMoved = 0f;
+        PlayerController.Instance.accumulatedDistance = 0f;
+        PlayerController.Instance.pathPositions.Clear();
+        PlayerController.Instance.lineRenderer.positionCount = 0;
     }
 
 }
