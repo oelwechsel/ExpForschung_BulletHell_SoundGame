@@ -16,7 +16,7 @@ public class PlayerLives : MonoBehaviour
     [Header("Invulnerability Settings")]
     public float invulnDuration = 1.0f;
     private bool isRespawning = false;
-    private bool isInvulnerable = false;
+    public bool isInvulnerable = false;
 
     public bool IsRespawning => isRespawning;
 

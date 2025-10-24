@@ -1040,8 +1040,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d87dd82e499cecd43b84bff69dcabd91, type: 3}
   - {fileID: 8300000, guid: d87dd82e499cecd43b84bff69dcabd91, type: 3}
   - {fileID: 8300000, guid: d87dd82e499cecd43b84bff69dcabd91, type: 3}
-  levelDuration: 120
+  levelDuration: 10
   isLevelActive: 0
+  currentTimer: 0
 --- !u!4 &622068463
 Transform:
   m_ObjectHideFlags: 0
@@ -1734,6 +1735,9 @@ MonoBehaviour:
   shootOrigin: {fileID: 1243910172}
   projectileSpeed: 12
   fireRate: 0.1
+  closeRangeRadius: 2
+  enemyTag: Enemy
+  closeRangeEnemyCounter: 0
 --- !u!50 &1243910175
 Rigidbody2D:
   serializedVersion: 4

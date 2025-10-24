@@ -87,6 +87,8 @@ public class LevelManager : MonoBehaviour
         musicSource.clip = tracks[trackIndex];
         musicSource.Play();
 
+        DataCollector.Instance.Set("Track Name", musicSource.clip.name);
+
         // Level starten
         currentLevel++;
 
@@ -112,10 +114,12 @@ public class LevelManager : MonoBehaviour
             // Level endet, wenn Spieler alle Leben verloren hat
             if (PlayerLives.Instance.CurrentLives <= 0)
             {
+                levelEnded = true;
                 DataCollector.Instance.Set("HasPlayerSurvived", false);
                 DataCollector.Instance.Set("Lifes left", PlayerLives.Instance.CurrentLives);
                 DataCollector.Instance.Set("Time Survived", (int)timer);
-                levelEnded = true;
+                DataCollector.Instance.Set("Enemy in Close Range Detected", PlayerController.Instance.closeRangeEnemyCounter);
+                PlayerController.Instance.closeRangeEnemyCounter = 0;
             }
             else if (PlayerLives.Instance.CurrentLives == 3)
             {
@@ -132,6 +136,8 @@ public class LevelManager : MonoBehaviour
                 DataCollector.Instance.Set("HasPlayerSurvived", true);
                 DataCollector.Instance.Set("Lifes left", PlayerLives.Instance.CurrentLives);
                 DataCollector.Instance.Set("Time Survived", (int)timer);
+                DataCollector.Instance.Set("Enemy in Close Range Detected", PlayerController.Instance.closeRangeEnemyCounter);
+                PlayerController.Instance.closeRangeEnemyCounter = 0;
             }
 
 
