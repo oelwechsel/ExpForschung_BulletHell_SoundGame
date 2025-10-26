@@ -19,8 +19,8 @@ public class EnemyOrbitCenter : MonoBehaviour
         enemyA = Instantiate(orbitingEnemyPrefab, transform.position + Vector3.right * orbitRadius, Quaternion.identity);
         enemyB = Instantiate(orbitingEnemyPrefab, transform.position - Vector3.right * orbitRadius, Quaternion.identity);
 
-        SpawnManager.Instance.activeEnemies.Add(enemyA);
-        SpawnManager.Instance.activeEnemies.Add(enemyB);
+        PatternSpawner.Instance.activeEnemies.Add(enemyA);
+        PatternSpawner.Instance.activeEnemies.Add(enemyB);
     }
 
     private void Update()
@@ -58,7 +58,7 @@ public class EnemyOrbitCenter : MonoBehaviour
             enemyB.transform.rotation = Quaternion.Euler(0, 0, angleB);
         }
 
-        // Optional: Orbit auflösen, wenn beide Gegner zerstört sind
+        // Optional: Orbit auflï¿½sen, wenn beide Gegner zerstï¿½rt sind
         if (enemyA == null && enemyB == null)
             Destroy(gameObject);
     }

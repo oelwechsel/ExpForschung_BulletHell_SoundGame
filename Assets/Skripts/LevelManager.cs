@@ -31,6 +31,8 @@ public class LevelManager : MonoBehaviour
     [Header("Level Settings")]
     public float levelDuration = 120f; // 2 Minuten pro Runde
 
+    public bool shuffleSpawnPatternsInLevel = false;
+
     private List<int> remainingTracks;
     private int currentLevel = 0;
 
@@ -94,7 +96,13 @@ public class LevelManager : MonoBehaviour
 
         isLevelActive = true;
         PlayerLives.Instance.ResetLives();
-        SpawnManager.Instance.StartCurrentPattern();
+        //SpawnManager.Instance.StartCurrentPattern();
+        Debug.LogWarning("Here should the pattern spawning be started but it automatically starts in PatternSpawner Update Function");
+
+        if (shuffleSpawnPatternsInLevel)
+            PatternSpawner.Instance.ShufflePatterns();
+        
+        PatternSpawner.Instance.StartFirstWave();
 
         // Coroutine zum Levelablauf starten
         StartCoroutine(RunLevel());
