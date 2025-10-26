@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac6fd480dfda0884781c5f8e7c6cb5bf, type: 3}
-  m_Name: Spriale
+  m_Name: Kreuz
   m_EditorClassIdentifier: 
-  startPosition: {x: -1.288765, y: 0.1080658}
+  startPosition: {x: -0.006063759, y: 0.06055834}
   spacing: 1
   rotationOffset: 0
   scale: 1
@@ -20,47 +20,47 @@ MonoBehaviour:
   randomSpawnArea: 0
   avoidPlayer: 0
   maxRandomRotation: 0
-  randomSpawnRange: {x: 20, y: 10}
+  randomSpawnRange: {x: 0, y: 0}
   maxRandomOffset: 0
   avoidPlayerRadius: 5
   enemies:
   - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
-    offset: {x: 4.181552, y: 0.021512747}
-    delay: 0.05
+    offset: {x: 0.00000005960464, y: -3.96}
+    delay: 0.3
+    individualScale: 1
+  - prefab: {fileID: 2010498967951446650, guid: b031701e1363d804bbc6d1c9b6ccf086, type: 3}
+    offset: {x: 0.05, y: -8.13}
+    delay: 0
     individualScale: 1
   - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
-    offset: {x: 1.3122814, y: 3.9556675}
-    delay: 0.1
+    offset: {x: 4.01, y: -0.019720104}
+    delay: 0.3
+    individualScale: 1
+  - prefab: {fileID: 2010498967951446650, guid: b031701e1363d804bbc6d1c9b6ccf086, type: 3}
+    offset: {x: 8.06, y: -0.0197201}
+    delay: 0
     individualScale: 1
   - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
-    offset: {x: -3.4796965, y: 1.6779988}
-    delay: 0.15
-    individualScale: 1
-  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
-    offset: {x: -2.16, y: -3.59}
-    delay: 0.2
-    individualScale: 1
-  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
-    offset: {x: 5.0689554, y: -4.87}
-    delay: 0.25
-    individualScale: 1
-  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
-    offset: {x: 8.500248, y: 2.7724628}
+    offset: {x: 11.94, y: -0.04930022}
     delay: 0.3
     individualScale: 1
   - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
-    offset: {x: 1.3714415, y: 8.303944}
-    delay: 0.35
+    offset: {x: -0.0295803, y: 3.86}
+    delay: 0.3
+    individualScale: 1
+  - prefab: {fileID: 2010498967951446650, guid: b031701e1363d804bbc6d1c9b6ccf086, type: 3}
+    offset: {x: 0.08874017, y: 8}
+    delay: 0
     individualScale: 1
   - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
-    offset: {x: -6.3489666, y: 5.5234137}
-    delay: 0.4
+    offset: {x: -4, y: 0.06902025}
+    delay: 0.3
+    individualScale: 1
+  - prefab: {fileID: 2010498967951446650, guid: b031701e1363d804bbc6d1c9b6ccf086, type: 3}
+    offset: {x: -8.06, y: 0.039440013}
+    delay: 0
     individualScale: 1
   - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
-    offset: {x: -7.9462934, y: -2.1969955}
-    delay: 0.45
-    individualScale: 1
-  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
-    offset: {x: -0.9653873, y: -8.79336}
-    delay: 0.5
+    offset: {x: -12.12, y: -0.019720102}
+    delay: 0.3
     individualScale: 1
