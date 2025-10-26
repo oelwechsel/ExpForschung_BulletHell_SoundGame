@@ -1719,7 +1719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134054bf1f30f014b895f35818c5d67d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 8
   projectilePrefab: {fileID: 6080723290900785180, guid: 4e34cab1d0907db4a983be38da089792, type: 3}
   shootOrigin: {fileID: 1243910172}
   projectileSpeed: 12

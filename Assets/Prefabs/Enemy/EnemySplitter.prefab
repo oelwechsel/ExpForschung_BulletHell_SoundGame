@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46ed9a472f89af847a56355996bd3a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 4
   orbitCenterPrefab: {fileID: 5820297470491982401, guid: 0565b1d39245529498d3fdf482307f07, type: 3}
   orbitingEnemyPrefab: {fileID: 7577861480676072008, guid: 6cae01807c5abe44ca70f8c311605e8d, type: 3}
 --- !u!50 &2154075666009434690
