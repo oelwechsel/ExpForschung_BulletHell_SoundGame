@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6fd480dfda0884781c5f8e7c6cb5bf, type: 3}
+  m_Name: Rechteck
+  m_EditorClassIdentifier: 
+  startPosition: {x: -1.472435, y: 0.6542488}
+  spacing: 1
+  rotationOffset: 0
+  scale: 1
+  triggerRemainingEnemies: 0
+  randomSpawnArea: 0
+  avoidPlayer: 1
+  maxRandomRotation: 360
+  randomSpawnRange: {x: 20, y: 10}
+  maxRandomOffset: 0
+  avoidPlayerRadius: 5
+  enemies:
+  - prefab: {fileID: 7577861480676072008, guid: 176d166c3d8d0b64eaf2fe9ba8e5283b, type: 3}
+    offset: {x: -15.3099375, y: 7.8998275}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7577861480676072008, guid: 176d166c3d8d0b64eaf2fe9ba8e5283b, type: 3}
+    offset: {x: -14.753887, y: 1.2272145}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7577861480676072008, guid: 176d166c3d8d0b64eaf2fe9ba8e5283b, type: 3}
+    offset: {x: 1.0204011, y: -8.898767}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7577861480676072008, guid: 176d166c3d8d0b64eaf2fe9ba8e5283b, type: 3}
+    offset: {x: 17.614136, y: -9.162162}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7577861480676072008, guid: 176d166c3d8d0b64eaf2fe9ba8e5283b, type: 3}
+    offset: {x: 17.58487, y: -0.93845785}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7577861480676072008, guid: 176d166c3d8d0b64eaf2fe9ba8e5283b, type: 3}
+    offset: {x: 17.818996, y: 7.6657004}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7577861480676072008, guid: 176d166c3d8d0b64eaf2fe9ba8e5283b, type: 3}
+    offset: {x: 1.342326, y: 7.8120294}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7577861480676072008, guid: 176d166c3d8d0b64eaf2fe9ba8e5283b, type: 3}
+    offset: {x: -14.958747, y: -8.62}
+    delay: 0
+    individualScale: 1

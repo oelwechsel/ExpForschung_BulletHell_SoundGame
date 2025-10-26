@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6fd480dfda0884781c5f8e7c6cb5bf, type: 3}
+  m_Name: Nacheinander
+  m_EditorClassIdentifier: 
+  startPosition: {x: -0.286194, y: 0.2962302}
+  spacing: 0.94
+  rotationOffset: 0
+  scale: 1
+  triggerRemainingEnemies: 0
+  randomSpawnArea: 1
+  avoidPlayer: 1
+  maxRandomRotation: 360
+  randomSpawnRange: {x: 20, y: 10}
+  maxRandomOffset: 0
+  avoidPlayerRadius: 5
+  enemies:
+  - prefab: {fileID: 2010498967951446650, guid: b031701e1363d804bbc6d1c9b6ccf086, type: 3}
+    offset: {x: -14.447573, y: 7.292073}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 2010498967951446650, guid: b031701e1363d804bbc6d1c9b6ccf086, type: 3}
+    offset: {x: -11.696583, y: 7.233541}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 2010498967951446650, guid: b031701e1363d804bbc6d1c9b6ccf086, type: 3}
+    offset: {x: -8.096884, y: 7.4091363}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7577861480676072008, guid: 176d166c3d8d0b64eaf2fe9ba8e5283b, type: 3}
+    offset: {x: 16.164501, y: -7.311584}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7577861480676072008, guid: 176d166c3d8d0b64eaf2fe9ba8e5283b, type: 3}
+    offset: {x: 11.59903, y: -7.3408504}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7577861480676072008, guid: 176d166c3d8d0b64eaf2fe9ba8e5283b, type: 3}
+    offset: {x: 6.4775076, y: -7.2823176}
+    delay: 0
+    individualScale: 1

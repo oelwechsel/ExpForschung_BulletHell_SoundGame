@@ -10,65 +10,65 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac6fd480dfda0884781c5f8e7c6cb5bf, type: 3}
-  m_Name: EdgeWave
+  m_Name: SlowSpam
   m_EditorClassIdentifier: 
-  startPosition: {x: -0.1351213, y: 0.2685947}
+  startPosition: {x: 0.2893683, y: 0.2133102}
   spacing: 1
   rotationOffset: 0
   scale: 1
   triggerRemainingEnemies: 0
   randomSpawnArea: 0
   avoidPlayer: 1
-  maxRandomRotation: 0
+  maxRandomRotation: 360
   randomSpawnRange: {x: 20, y: 10}
   maxRandomOffset: 0
   avoidPlayerRadius: 5
   enemies:
-  - prefab: {fileID: 7577861480676072008, guid: 6cae01807c5abe44ca70f8c311605e8d, type: 3}
-    offset: {x: -16.682545, y: 6.270096}
+  - prefab: {fileID: 2010498967951446650, guid: b031701e1363d804bbc6d1c9b6ccf086, type: 3}
+    offset: {x: -15.959643, y: 0.81944376}
     delay: 0
     individualScale: 1
-  - prefab: {fileID: 7577861480676072008, guid: 176d166c3d8d0b64eaf2fe9ba8e5283b, type: 3}
-    offset: {x: -16.714867, y: 8.241619}
+  - prefab: {fileID: 2010498967951446650, guid: b031701e1363d804bbc6d1c9b6ccf086, type: 3}
+    offset: {x: -8.672444, y: 3.5119014}
     delay: 0
     individualScale: 1
-  - prefab: {fileID: 7577861480676072008, guid: 6cae01807c5abe44ca70f8c311605e8d, type: 3}
-    offset: {x: -13.159657, y: 8.500179}
+  - prefab: {fileID: 2010498967951446650, guid: b031701e1363d804bbc6d1c9b6ccf086, type: 3}
+    offset: {x: -9.082166, y: 8.370031}
     delay: 0
     individualScale: 1
   - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
-    offset: {x: -16.488625, y: -5.8176146}
-    delay: 0
-    individualScale: 1
-  - prefab: {fileID: 7577861480676072008, guid: 176d166c3d8d0b64eaf2fe9ba8e5283b, type: 3}
-    offset: {x: -16.391665, y: -8.338579}
+    offset: {x: 8.799265, y: 7.9895754}
     delay: 0
     individualScale: 1
   - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
-    offset: {x: -13.515179, y: -8.72642}
+    offset: {x: 7.8334904, y: 3.7752938}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+    offset: {x: 15.149953, y: 1.2876973}
     delay: 0
     individualScale: 1
   - prefab: {fileID: 2010498967951446650, guid: b031701e1363d804bbc6d1c9b6ccf086, type: 3}
-    offset: {x: 13.051924, y: -8.144659}
+    offset: {x: 14.652434, y: -2.985116}
     delay: 0
     individualScale: 1
   - prefab: {fileID: 2010498967951446650, guid: b031701e1363d804bbc6d1c9b6ccf086, type: 3}
-    offset: {x: 15.7991295, y: -8.50018}
+    offset: {x: 7.2481737, y: -2.750989}
     delay: 0
     individualScale: 1
   - prefab: {fileID: 2010498967951446650, guid: b031701e1363d804bbc6d1c9b6ccf086, type: 3}
-    offset: {x: 16.21929, y: -6.1408143}
+    offset: {x: 7.0140476, y: -7.66765}
     delay: 0
     individualScale: 1
-  - prefab: {fileID: 7577861480676072008, guid: 176d166c3d8d0b64eaf2fe9ba8e5283b, type: 3}
-    offset: {x: 14.150806, y: 8.273939}
+  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+    offset: {x: -14.759741, y: -2.3412673}
     delay: 0
     individualScale: 1
-  - prefab: {fileID: 7577861480676072008, guid: 176d166c3d8d0b64eaf2fe9ba8e5283b, type: 3}
-    offset: {x: 16.736412, y: 8.273939}
+  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+    offset: {x: -6.272647, y: -2.8387868}
     delay: 0
     individualScale: 1
-  - prefab: {fileID: 7577861480676072008, guid: 176d166c3d8d0b64eaf2fe9ba8e5283b, type: 3}
-    offset: {x: 16.994974, y: 6.108494}
+  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+    offset: {x: -5.9507227, y: -7.1701317}
     delay: 0
     individualScale: 1

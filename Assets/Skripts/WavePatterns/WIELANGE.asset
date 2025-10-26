@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6fd480dfda0884781c5f8e7c6cb5bf, type: 3}
+  m_Name: WIELANGE
+  m_EditorClassIdentifier: 
+  startPosition: {x: 1.046587, y: -0.7645831}
+  spacing: 1
+  rotationOffset: 0
+  scale: 1
+  triggerRemainingEnemies: 0
+  randomSpawnArea: 0
+  avoidPlayer: 0
+  maxRandomRotation: 360
+  randomSpawnRange: {x: 20, y: 10}
+  maxRandomOffset: 0
+  avoidPlayerRadius: 5
+  enemies:
+  - prefab: {fileID: 7577861480676072008, guid: 176d166c3d8d0b64eaf2fe9ba8e5283b, type: 3}
+    offset: {x: -17.24377, y: 8.630239}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+    offset: {x: -14.704662, y: 6.552786}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7577861480676072008, guid: 176d166c3d8d0b64eaf2fe9ba8e5283b, type: 3}
+    offset: {x: -11.617336, y: 4.8504276}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+    offset: {x: -8.126061, y: 2.7152672}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7577861480676072008, guid: 176d166c3d8d0b64eaf2fe9ba8e5283b, type: 3}
+    offset: {x: -7.0007734, y: 5.2543764}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+    offset: {x: -6.5102634, y: 1.8496622}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7577861480676072008, guid: 176d166c3d8d0b64eaf2fe9ba8e5283b, type: 3}
+    offset: {x: -9.857271, y: 0.86864275}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+    offset: {x: -13.521669, y: 0.7243752}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7577861480676072008, guid: 176d166c3d8d0b64eaf2fe9ba8e5283b, type: 3}
+    offset: {x: -7.1450415, y: 6.985588}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+    offset: {x: 15.302992, y: -7.2103415}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 2010498967951446650, guid: b031701e1363d804bbc6d1c9b6ccf086, type: 3}
+    offset: {x: 13.773756, y: -6.489004}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+    offset: {x: 12.013692, y: -5.363716}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 2010498967951446650, guid: b031701e1363d804bbc6d1c9b6ccf086, type: 3}
+    offset: {x: 9.589995, y: -4.0653086}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+    offset: {x: 6.7334986, y: -5.161742}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 2010498967951446650, guid: b031701e1363d804bbc6d1c9b6ccf086, type: 3}
+    offset: {x: 5.290823, y: -2.9400218}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+    offset: {x: 4.5406313, y: -1.497346}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 2010498967951446650, guid: b031701e1363d804bbc6d1c9b6ccf086, type: 3}
+    offset: {x: 7.0797405, y: -1.5550529}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+    offset: {x: 9.705411, y: -2.016709}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 2010498967951446650, guid: b031701e1363d804bbc6d1c9b6ccf086, type: 3}
+    offset: {x: 11.696304, y: -2.1321232}
+    delay: 0
+    individualScale: 1
