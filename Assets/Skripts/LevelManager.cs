@@ -76,16 +76,29 @@ public class LevelManager : MonoBehaviour
         levelCompleteScreen.SetActive(false);
         endScreen.SetActive(false);
 
+        // Wenn keine Tracks mehr übrig sind → Endscreen
         if (remainingTracks.Count == 0)
         {
             ShowEndScreen();
             return;
         }
 
-        // Track ausw�hlen und entfernen (nicht wiederholen)
-        int trackIndex = remainingTracks[Random.Range(0, remainingTracks.Count)];
-        remainingTracks.Remove(trackIndex);
+        int trackIndex;
 
+        // Beim ersten Level IMMER Track 0 spielen
+        if (currentLevel == 0)
+        {
+            trackIndex = 0;
+            remainingTracks.Remove(trackIndex);
+        }
+        else
+        {
+            // Danach zufällig aus den restlichen Tracks wählen
+            trackIndex = remainingTracks[Random.Range(0, remainingTracks.Count)];
+            remainingTracks.Remove(trackIndex);
+        }
+
+        // Musik starten
         musicSource.clip = tracks[trackIndex];
         musicSource.Play();
 
@@ -93,18 +106,15 @@ public class LevelManager : MonoBehaviour
 
         // Level starten
         currentLevel++;
-
         isLevelActive = true;
+
         PlayerLives.Instance.ResetLives();
-        //SpawnManager.Instance.StartCurrentPattern();
-        Debug.LogWarning("Here should the pattern spawning be started but it automatically starts in PatternSpawner Update Function");
 
         if (shuffleSpawnPatternsInLevel)
             PatternSpawner.Instance.ShufflePatterns();
-        
+
         PatternSpawner.Instance.StartFirstWave();
 
-        // Coroutine zum Levelablauf starten
         StartCoroutine(RunLevel());
     }
 
