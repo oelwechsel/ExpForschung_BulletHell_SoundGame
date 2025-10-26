@@ -88,8 +88,8 @@ public class PlayerController : MonoBehaviour
 
         lineRenderer.positionCount = 0;
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-        lineRenderer.startColor = new Color(1f, 0.8f, 1f, 1f);
-        lineRenderer.endColor = new Color(1f, 0.8f, 1f, 1f);
+        lineRenderer.startColor = new Color(1f, 0.8f, 1f, 0.01f);
+        lineRenderer.endColor = new Color(1f, 0.8f, 1f, 0.01f);
         lineRenderer.startWidth = 0.05f;
         lineRenderer.endWidth = 0.05f;
         lineRenderer.numCapVertices = 2;
