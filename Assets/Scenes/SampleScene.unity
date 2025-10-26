@@ -874,7 +874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5675415be45d49c43b816c8a83123e2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pattern: {fileID: 11400000, guid: 57a33f837abe68b41b45a65c511bacaf, type: 2}
+  pattern: {fileID: 11400000, guid: 7e372fb07bd7e944380f6a31c4c1507d, type: 2}
   gizmoColor: {r: 0, g: 0.91127896, b: 1, a: 1}
   gizmoSize: 0.12
 --- !u!4 &606362060
@@ -2018,10 +2018,10 @@ MonoBehaviour:
   wavePatterns:
   - {fileID: 11400000, guid: 8c503fdc4103ddb45849c50504a69fe4, type: 2}
   - {fileID: 11400000, guid: 8c503fdc4103ddb45849c50504a69fe4, type: 2}
-  - {fileID: 11400000, guid: 2da5cfe5f14f3dd4da9d98d7872564c7, type: 2}
+  - {fileID: 11400000, guid: 7e372fb07bd7e944380f6a31c4c1507d, type: 2}
   - {fileID: 11400000, guid: 2da5cfe5f14f3dd4da9d98d7872564c7, type: 2}
   - {fileID: 11400000, guid: 57a33f837abe68b41b45a65c511bacaf, type: 2}
-  - {fileID: 11400000, guid: 57a33f837abe68b41b45a65c511bacaf, type: 2}
+  - {fileID: 11400000, guid: 7e372fb07bd7e944380f6a31c4c1507d, type: 2}
   currentPatternIndex: 0
   activeEnemies: []
 --- !u!4 &1373557620
