@@ -9,7 +9,7 @@ public class EnemyShrink : EnemyBase
 
     private void Start()
     {
-        moveSpeed = 0.8f; // sehr langsam
+     
         originalScale = transform.localScale;
 
         // Health so einstellen, dass er 3 Treffer überlebt
