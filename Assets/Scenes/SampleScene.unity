@@ -1025,9 +1025,9 @@ MonoBehaviour:
   nextLevelButton: {fileID: 1423112997}
   musicSource: {fileID: 622068461}
   tracks:
-  - {fileID: 8300000, guid: d87dd82e499cecd43b84bff69dcabd91, type: 3}
-  - {fileID: 8300000, guid: d87dd82e499cecd43b84bff69dcabd91, type: 3}
-  - {fileID: 8300000, guid: d87dd82e499cecd43b84bff69dcabd91, type: 3}
+  - {fileID: 8300000, guid: 0b40d7d0851d6e24aae2bbb531dd4cca, type: 3}
+  - {fileID: 8300000, guid: c40acd829a4b5ca4fa8955cc1fae49af, type: 3}
+  - {fileID: 8300000, guid: 9d6bad4bfedf8cb4a880a07f1e7b997f, type: 3}
   levelDuration: 20
   shuffleSpawnPatternsInLevel: 1
   isLevelActive: 0
