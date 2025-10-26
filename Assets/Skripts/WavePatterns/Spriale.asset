@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac6fd480dfda0884781c5f8e7c6cb5bf, type: 3}
   m_Name: Spriale
   m_EditorClassIdentifier: 
-  startPosition: {x: 0, y: 0}
+  startPosition: {x: -1.288765, y: 0.1080658}
   spacing: 1
   rotationOffset: 0
   scale: 1
@@ -23,4 +23,44 @@ MonoBehaviour:
   randomSpawnRange: {x: 20, y: 10}
   maxRandomOffset: 0
   avoidPlayerRadius: 5
-  enemies: []
+  enemies:
+  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+    offset: {x: 4.181552, y: 0.021512747}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+    offset: {x: 1.3122814, y: 3.9556675}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+    offset: {x: -3.4796965, y: 1.6779988}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+    offset: {x: -2.16, y: -3.59}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+    offset: {x: 5.0689554, y: -4.87}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+    offset: {x: 8.500248, y: 2.7724628}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+    offset: {x: 1.3714415, y: 8.303944}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+    offset: {x: -6.3489666, y: 5.5234137}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+    offset: {x: -7.9462934, y: -2.1969955}
+    delay: 0
+    individualScale: 1
+  - prefab: {fileID: 7414165381251910137, guid: 8a19f12e4bd57a048a38737ca0f99f50, type: 3}
+    offset: {x: -0.9653873, y: -8.79336}
+    delay: 0
+    individualScale: 1
