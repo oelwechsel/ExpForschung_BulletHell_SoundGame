@@ -162,7 +162,6 @@ public class LevelManager : MonoBehaviour
                 DataCollector.Instance.Set("Total Bullets Fired", PlayerController.Instance.bulletCounter);
                 PlayerController.Instance.bulletCounter = 0;
                 DataCollector.Instance.Set($"Distance traveled", PlayerController.Instance.GetTotalDistanceMoved());
-
             }
             
             yield return null;

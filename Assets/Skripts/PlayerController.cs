@@ -182,7 +182,7 @@ public class PlayerController : MonoBehaviour
         if (projectilePrefab == null || shootOrigin == null) return;
         if (!LevelManager.Instance.isLevelActive || PlayerLives.Instance.IsRespawning) return;
 
-        if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
+        if (Input.GetMouseButtonDown(0) && Time.time >= nextFireTime)
         {
             Shoot();
             nextFireTime = Time.time + fireRate;
